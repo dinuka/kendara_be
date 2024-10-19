@@ -1,0 +1,1 @@
+export const astrologyApi = "https://json.freeastrologyapi.com";

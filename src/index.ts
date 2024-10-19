@@ -1,7 +1,9 @@
-import { Elysia } from "elysia";
+import { Elysia, t } from 'elysia'
+import { swagger } from '@elysiajs/swagger'
 
-const app = new Elysia().get("/", () => "Hello Elysia").listen(3000);
+import horoscope from './horoscope'
 
-console.log(
-  `🦊 Elysia is running at ${app.server?.hostname}:${app.server?.port}`
-);
+const app = new Elysia()
+  .use(swagger())
+  .use(horoscope)
+  .listen(3000)
