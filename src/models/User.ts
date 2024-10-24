@@ -70,24 +70,27 @@ interface User {
   id: string;
   name: string;
   birthTime: Date;
+  timezone: number;
   location: {
     latitude: number;
     longitude: number;
   };
-  nakatha: {
+  nakatha?: {
     slug: Nakath;
     pada: number; //1,2,3,4
   };
-  lagna: {
+  lagna?: {
     slug: Rashi;
     degree: number;
   };
-  graha: Record<Graha, GrahaInfo>;
-  bhava: Record<Bhava, BhavaInfo>;
-  dhasha: Dhasha;
-  yoga: {
+  graha?: Record<Graha, GrahaInfo>;
+  bhava?: Record<Bhava, BhavaInfo>;
+  dhasha?: Dhasha;
+  yoga?: {
     name: string;
     reason: string;
     description: string;
   }
 }
+
+export default User;
